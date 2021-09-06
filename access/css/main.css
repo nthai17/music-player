@@ -1,0 +1,215 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(270deg, black, rgba(0, 0, 0, 0.562));
+}
+.btn-active{
+    color: turquoise !important;
+}
+.player{
+    width: 100%;
+    /* background-color: turquoise; */
+    
+}
+.btn-toggle-play .pause {
+    display: none;
+}
+.player-pause .btn-toggle-play .play {
+    display: none;
+}
+.player-pause .btn-toggle-play .pause {
+    display: block;
+}
+.overlay {
+    background-image: linear-gradient(180deg, #ffffff2e, transparent);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cd{
+    background-image: url(./access/img/song1.jpg);
+    background-attachment: scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+.cd-info{
+    text-align: center;
+    width: 200px;
+    overflow: hidden;
+}
+.cd-info h3{
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.822);
+    font-weight: 500;
+    width: 400px;
+}
+.text-run{
+    animation: runText 8s linear infinite;
+}
+@keyframes runText {
+    0% {
+        transform: translateX(200px);
+    }
+    100% {
+        transform: translateX(-400px);
+    }
+}
+.cd-info span:first-child{
+    color: rgba(20, 19, 19, 0.822);
+    font-size: 18px;
+    font-weight: 800;
+    text-shadow: 0 0 4px floralwhite;
+}
+.cd-info span:last-child{
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.cd-body{
+    margin-top: 10px;
+    width: 300px;
+}
+.cd-thumb{
+    padding-top: 100%;
+    margin: auto;
+    background-image: url(./access/img/song1.jpg);
+    background-size: cover;
+    width: 100%;
+    margin-bottom: 36px;
+}
+.updown-thumb {
+    animation: upDown 2s ease-in-out infinite;
+}
+@keyframes upDown {
+    0% {
+        opacity: 1;
+        transform: translate(0);
+    }
+    50% {
+        opacity: 0.9;
+        transform: translate(-2px, -2px);
+        box-shadow: 0 0 8px 4px rgb(255 255 255 / 30%);
+        border-radius: 30px;
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+input[type="range"] {
+    outline: 0;
+    border: 0;
+    border-radius: 500px;
+    width: 300px;
+    max-width: 100%;
+    overflow: hidden;
+    height: 8px;
+    margin-top: 2px;
+    -webkit-appearance: none;
+    background-color: rgba(14, 13, 13, 0.76);
+  }
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: 8px;
+    -webkit-appearance: none;
+    color: #444;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    width: 8px;
+    border: unset;
+    -webkit-appearance: none;
+    height: 8px;
+    cursor: ew-resize;
+    box-shadow: -340px 0 0px 335px #000000, inset 40px 0px 0px #fff;
+    border-radius: 50%;
+    position: relative;
+  }
+  
+
+
+.cd-control{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 80px;
+    align-items: center;
+}
+
+.btn{
+    color: #fff;
+    font-size: 40px;
+} 
+.btn:active{
+    color: turquoise;
+}
+.btn-repeat, .btn-random{
+    font-size: 18px;
+}
+
+.play-list{
+    width: 90%;
+    margin: 562px auto 8px;
+}
+
+.song{
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 4px 0;
+    margin-top: 4px;
+    border-top: 1px solid #ccc;
+    min-height: 85px;
+    justify-content:space-between;
+}
+
+.song.active {
+    color: cornflowerblue;
+    background-image: linear-gradient(90deg, #000, transparent);
+    animation: activeSong 2s linear infinite;
+}
+@keyframes activeSong {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(2px, 2px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+.song .thumb {
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+}
+.song .song-wrab {
+    display: flex;
+    align-items: center;
+}
+
+.song .body {
+    margin-left: 10px;
+}
+
+.song .title{
+    margin-bottom: 2px;
+    width: 100%;
+    display: block;
+    font-size: 15px;
+}
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./access/css/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="#">
+    <title>My music player</title>
+</head>
+<body>
+    <div class="player">
+        <div class="cd">
+            <div class="overlay">
+                <div class="cd-info">
+                    <span>Now playing</span>
+                    <h3>Tên bài hát</h3>
+                    <span>Tên ca sĩ</span>
+                </div>
+                <div class="cd-body">
+                    <div class="cd-thumb"></div>
+                </div>
+                <input class="seek" type="range" step="0.1" min="0" max="100" value="0">
+                <div class="cd-control">
+                    <div class="btn btn-repeat"><i class="fas fa-redo-alt"></i></div>
+                    <div class="btn btn-prev"><i class="fas fa-caret-left"></i></div>
+                    <div class="btn btn-toggle-play"><i class="play far fa-play-circle"></i><i class="pause far fa-pause-circle"></i></div>
+                    <div class="btn btn-next"><i class="fas fa-caret-right"></i></div>
+                    <div class="btn btn-random"><i class="fas fa-random"></i></div>
+                </div>
+            </div>
+        </div>
+        <audio id="audio" src=""></audio>
+        <div class="play-list">
+        </div>
+    </div>
+    <script src="./access/js/app.js"></script>
+</body>
+</html>
