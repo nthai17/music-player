@@ -34,7 +34,7 @@ body{
     justify-content: center;
 }
 .cd{
-    background-image: url(./access/img/song1.jpg);
+    background-image: url('./access/img/song1.jpg');
     background-attachment: scroll;
     background-size: cover;
     background-repeat: no-repeat;
@@ -85,7 +85,7 @@ body{
 .cd-thumb{
     padding-top: 100%;
     margin: auto;
-    background-image: url(./access/img/song1.jpg);
+    background-image: url('./access/img/song1.jpg');
     background-size: cover;
     width: 100%;
     margin-bottom: 36px;
@@ -206,6 +206,7 @@ input[type="range"] {
     color: rgb(39, 93, 192);
     background-image: linear-gradient(90deg, #000, transparent);
     animation: activeSong 2s linear infinite;
+    position: relative;
     z-index: 0;
 }
 .song.active .author{
