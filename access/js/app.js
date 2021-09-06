@@ -215,7 +215,7 @@ const app = {
     scrollToActiveSong: function(){
         setTimeout(()=>{
             $('.song.active').scrollIntoView({
-                behavior: 'smooth',
+                behavior: 'auto',
                 block: 'center',
             })
         },300)
