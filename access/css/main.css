@@ -42,7 +42,7 @@ body{
     top: 0;
     right: 0;
     left: 0;
-    z-index: 10;
+    z-index: 100;
 }
 .cd-info{
     text-align: center;
@@ -206,6 +206,7 @@ input[type="range"] {
     color: rgb(39, 93, 192);
     background-image: linear-gradient(90deg, #000, transparent);
     animation: activeSong 2s linear infinite;
+    z-index: 0;
 }
 .song.active .author{
     color: rgb(49, 69, 105);
