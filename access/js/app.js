@@ -182,11 +182,9 @@ const app = {
                     _this.currentIdex = songNode.dataset.index;
                     _this.loadCurrentSong();
                     audio.play();
-                    console.log(_this.currentIdex);
                 }
             }
         }
-
     },
 
     nextSong: function(){
