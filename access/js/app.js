@@ -91,7 +91,7 @@ const app = {
             const newCdBodyWidth = cdBodyWidth - scrollTop;
             cdBody.style.width = newCdBodyWidth > 0 ? newCdBodyWidth + 'px' : 0;
             cdBody.style.opacity = newCdBodyWidth/cdBodyWidth
-        };;
+        };
 
         // xử lý khi click nút play
         playBtn.onclick = function(){
@@ -210,6 +210,8 @@ const app = {
         this.currentIdex = newCurrenIndex;
         this.loadCurrentSong();
     },
+    
+    // scroll hiện song active
     scrollToActiveSong: function(){
         setTimeout(()=>{
             $('.song.active').scrollIntoView({
@@ -225,11 +227,22 @@ const app = {
             get: function(){
                 return this.songs[this.currentIdex];
             }
-        }
-
-        )
+        })
     },
     
+    loadCurrentSong: function(){
+        NameCurrentSong.textContent = this.currentSong.name;
+        SingerCurrentSong.textContent = this.currentSong.singer;
+        cdThumb.style.backgroundImage = `url(${this.currentSong.avata})`;
+        cd.style.backgroundImage = `url(${this.currentSong.avata})`;
+        audio.src = this.currentSong.path;
+        if ($('.song.active')) {
+            $('.song.active').classList.remove('active')
+        }
+        const listSong = $$('.song');
+        listSong[this.currentIdex].classList.add('active')
+    },
+
     renderSongs: function() {
         const html = this.songs.map((song,index) => {
             return `<div data-index="${index}" class="song">
@@ -246,19 +259,6 @@ const app = {
             </div>`
         }); 
         playList.innerHTML = html.join('');
-    },
-
-    loadCurrentSong: function(){
-        NameCurrentSong.textContent = this.currentSong.name;
-        SingerCurrentSong.textContent = this.currentSong.singer;
-        cdThumb.style.backgroundImage = `url(${this.currentSong.avata})`;
-        cd.style.backgroundImage = `url(${this.currentSong.avata})`;
-        audio.src = this.currentSong.path;
-        if ($('.song.active')) {
-            $('.song.active').classList.remove('active')
-        }
-        const listSong = $$('.song');
-        listSong[this.currentIdex].classList.add('active')
     },
 
     start: function() {
